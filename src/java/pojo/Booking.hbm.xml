@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 9, 2018 7:23:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Booking" table="booking" catalog="facilitybooking" optimistic-lock="version">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity"></generator>
+        </id>
+        <many-to-one name="facility" class="pojo.Facility" fetch="select">
+            <column name="FACILITY_ID" />
+        </many-to-one>
+        <many-to-one name="user" class="pojo.User" fetch="select">
+            <column name="USER_ID" />
+        </many-to-one>
+        <property name="evdate" type="date">
+            <column name="EVDATE" length="10" />
+        </property>
+        <property name="startTime" type="time">
+            <column name="STARTTIME" length="8" />
+        </property>
+        <property name="endTime" type="time">
+            <column name="ENDTIME" length="8" />
+        </property>
+        <property name="bookedDate" type="date">
+            <column name="BOOKEDDATE" length="10" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" />
+        </property>
+        <property name="equipment" type="string">
+            <column name="EQUIPMENT" />
+        </property>
+        <property name="active" type="java.lang.Boolean">
+            <column name="ACTIVE" />
+        </property>
+    </class>
+</hibernate-mapping>

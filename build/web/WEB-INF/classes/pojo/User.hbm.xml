@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 9, 2018 7:23:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.User" table="user" catalog="ci6225" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="email" type="string">
+            <column name="EMAIL" />
+        </property>
+        <property name="passwd" type="string">
+            <column name="PASSWD" />
+        </property>
+        <property name="groupid" type="string">
+            <column name="GROUPID" />
+        </property>
+    </class>
+</hibernate-mapping>
